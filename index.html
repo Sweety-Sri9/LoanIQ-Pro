@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>LoanIQ</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d0d1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <header id="app-header">
+        <button id="back-btn" class="hidden">◀</button>
+        <h1 id="header-title">LoanIQ</h1>
+        <div class="header-actions" id="header-actions"></div>
+    </header>
+
+    <main id="app-content">
+        </main>
+
+    <nav id="bottom-nav">
+        <button class="nav-item active" data-target="dashboard">💼<br>Portfolio</button>
+        <button class="nav-item" data-target="simulate">⚡<br>Simulate</button>
+        <button class="nav-item" data-target="analytics">📊<br>Analytics</button>
+        <button class="nav-item" data-target="settings">⚙️<br>Settings</button>
+    </nav>
+
+    <div id="toast-container"></div>
+
+    <div id="modal-overlay" class="modal-overlay"></div>
+    
+    <div id="form-modal" class="bottom-sheet">
+        <div class="sheet-header">
+            <h3 id="modal-title">Title</h3>
+            <button class="close-btn" id="close-modal">✕</button>
+        </div>
+        <div class="sheet-content" id="modal-content">
+            </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
